@@ -3,10 +3,9 @@ MAINTAINER ifAintAd <github.com/ifaintad>
 
 ENV VERSION 0.7.2
 
-COPY groups.txt rulesets.txt /base/snippets/
-
+run mkdir -p /base/custom
 EXPOSE 25500
-VOLUME /base
+VOLUME /base/custom/
 
 WORKDIR /base
 
