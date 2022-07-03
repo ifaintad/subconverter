@@ -1,5 +1,5 @@
 FROM stilleshan/subconverter:latest
-MAINTAINER @ifAintAd
+MAINTAINER ifAintAd <github.com/ifaintad>
 
 ENV VERSION 0.7.2
 
