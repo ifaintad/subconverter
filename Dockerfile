@@ -1,5 +1,5 @@
 FROM stilleshan/subconverter:latest
-MAINTAINER Stille <stille@ioiox.com>
+MAINTAINER @ifAintAd
 
 ENV VERSION 0.7.2
 
