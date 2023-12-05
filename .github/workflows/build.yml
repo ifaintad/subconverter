@@ -24,10 +24,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: build and push image
-        run: |
-          if [ ${{ env.GIT_BRANCH_NAME }} == 'main' ]
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/subconverter:latest . || exit 1
-          then
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/subconverter:latest
-          fi
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/subconverter:latest
+          platforms: linux/amd64,linux/arm64
