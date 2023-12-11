@@ -1,4 +1,5 @@
-FROM ghcr.io/metacubex/subconverter:latest
+# FROM ghcr.io/metacubex/subconverter:latest
+FROM dzhuang/subconverter:latest
 MAINTAINER ifAintAd <github.com/ifaintad>
 
 run mkdir -p /base/custom
