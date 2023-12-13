@@ -9,6 +9,7 @@ RUN apk add tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone && \
     apk del tzdata && \
+    echo -e "-lb-@-\n-fb@" > /base/snippets/rename_lb_fb.txt && \
     sed -i \
     -e 's/skip_cert_verify_flag = true/skip_cert_verify_flag = false/' \
     -e 's/enable_cache = false/enable_cache = true/' \
